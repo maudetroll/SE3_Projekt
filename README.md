@@ -1,6 +1,6 @@
 # SE3_Projekt
 
-Defintion of Done
+Definition of Done
 
 Alle Test sind implementiert und erfolgreich durchgeführt  
 Der gesamte Code pro Backlog Eintrag ist geschrieben  
