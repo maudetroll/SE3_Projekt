@@ -18,3 +18,10 @@ PO: Maurice
 SM: Johannes
 Dev: Xenia
 Test: Lukas
+
+### Sprint 2 (12.06.2021)
+
+PO: Xenia
+SM: Lukas 
+Dev: Maurice 
+Tester: Johannes
