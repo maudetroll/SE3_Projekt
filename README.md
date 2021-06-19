@@ -21,7 +21,23 @@ Test: Lukas
 
 ### Sprint 2 (12.06.2021)
 
-PO: Xenia
-SM: Lukas 
+PO: Lukas
+SM: Xenia
 Dev: Maurice 
 Tester: Johannes
+
+
+### Sprint 2 (19.06.2021)
+
+PO: Xenia
+SM: Lukas 
+Dev: Johannes
+Tester: Maurice
+
+
+### Sprint 2 (26.06.2021)
+
+PO: Johannes
+SM: Maurice
+Dev: Lukas
+Tester: Xenia
