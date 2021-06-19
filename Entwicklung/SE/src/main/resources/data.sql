@@ -14,20 +14,20 @@ INSERT INTO MOBIL_TEL_HERSTELLER_ENTRY   (HERKUNFTSLAND_ID,name,gruendungsjahr,m
 
 
 
-INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groeße,prozessor_name,preis) VALUES (1,'S10',6.1,'Exynos 9820',899);
-INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groeße,prozessor_name,preis) VALUES (1,'S20',6.2,'Exynos 990',899);
+INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groesse,prozessor_name,preis) VALUES (1,'S10',6.1,'Exynos 9820',899);
+INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groesse,prozessor_name,preis) VALUES (1,'S20',6.2,'Exynos 990',899);
 
 
-INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groeße,prozessor_name,preis) VALUES (2,'P40 Pro',6.58,'Kirin 990',970);
-INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groeße,prozessor_name,preis) VALUES (2,'P30 Pro',6.0,'HiSilicon Kirin 980',506);
+INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groesse,prozessor_name,preis) VALUES (2,'P40 Pro',6.58,'Kirin 990',970);
+INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groesse,prozessor_name,preis) VALUES (2,'P30 Pro',6.0,'HiSilicon Kirin 980',506);
 
-INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groeße,prozessor_name,preis) VALUES (3,'11',6.1,'Apple A13 Bionic',799);
-INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groeße,prozessor_name,preis) VALUES (3,'10',5.8,'Apple A11',620);
+INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groesse,prozessor_name,preis) VALUES (3,'11',6.1,'Apple A13 Bionic',799);
+INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groesse,prozessor_name,preis) VALUES (3,'10',5.8,'Apple A11',620);
 
-INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groeße,prozessor_name,preis) VALUES (4,'MI Note 10 Pro',6.47,'Snapdragon 855',500);
-INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groeße,prozessor_name,preis) VALUES (4,'MI Note 9 Pro',6.4,'Snapdragon 855',375);
+INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groesse,prozessor_name,preis) VALUES (4,'MI Note 10 Pro',6.47,'Snapdragon 855',500);
+INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groesse,prozessor_name,preis) VALUES (4,'MI Note 9 Pro',6.4,'Snapdragon 855',375);
 
-INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groeße,prozessor_name,preis) VALUES (5,'Find X2 Pro',6.78,'Snapdragon 865',1200);
-INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groeße,prozessor_name,preis) VALUES (5,'F11 Pro',6.53,'MediaTek Helio P70',250);
+INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groesse,prozessor_name,preis) VALUES (5,'Find X2 Pro',6.78,'Snapdragon 865',1200);
+INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groesse,prozessor_name,preis) VALUES (5,'F11 Pro',6.53,'MediaTek Helio P70',250);
 
-INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groeße,prozessor_name,preis) VALUES (6,'8 T',6.55,'Snapdragon 865',470);
+INSERT INTO MODELL_ENTRY (MOBIL_TEL_HERSTELLER_ID,modell_name,display_groesse,prozessor_name,preis) VALUES (6,'8 T',6.55,'Snapdragon 865',470);
