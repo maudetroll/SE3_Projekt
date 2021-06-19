@@ -1,15 +1,29 @@
 package SE3_Projekt.SE;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.assertj.core.util.Arrays;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
@@ -18,9 +32,14 @@ import org.springframework.data.domain.Sort;
 import org.springframework.test.context.event.annotation.BeforeTestClass;
 
 @SpringBootTest
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class SeWwi18B3ApplicationTests {
 	
 	HerkunftslandRepository instance;
+	Connection conn = null;
+	ResultSet rs= null;
+	Statement stm =null;
+	
 	
 	@BeforeEach
 	public void preparation() {
@@ -124,25 +143,153 @@ class SeWwi18B3ApplicationTests {
 	};
 	
 	}
-//	@Test
-//	void contextLoads() {
-//		SeWwi18B3Application a= new SeWwi18B3Application();
-//	}
-	
-//	@BeforeEach
-//    public void preparation() {
-//		HerkunftslandRepository instance= createInstance();
-//	}
-    
 
     @Test
     public final void testFindByName() {
-        assertFalse(instance.findByName("USA").isEmpty());
+    	//assertFalse))
+    	assertFalse(instance.findByName("Chile")!= null);
     }
     
     @Test
     public final void testFindByGruendungsjahr() {
-        assertFalse(instance.findByGruendungsjahr(1776).isEmpty());
+        assertTrue(instance.findByGruendungsjahr(1700)== null);
+    }
+    
+    @BeforeAll
+    public final void getConnectionToDatabase() {
+        conn = null;
+        
+        try {
+            Class.forName("org.h2.Driver");
+            
+            conn = DriverManager.getConnection(
+                    "jdbc:h2:mem:testdb", "sa", ""); 
+
+            DatabaseMetaData md = conn.getMetaData();
+            stm = conn.createStatement();
+
+        } catch (Exception e) {
+        	System.err.print(e);
+            if (rs==null) {
+            	fail();
+            }
+        }
+    }
+    
+    
+    public ResultSet getResult(String tabelle) throws SQLException {
+    	//stm= getConnectionToDatabase();
+        String sql_select = tabelle;
+        rs= stm.executeQuery(sql_select);
+        return rs;
     }
 
+    
+
+    @BeforeAll
+    @Test
+    public final void testConnectiontoDatabase() throws SQLException {
+    	ResultSet s1= getResult("SHOW TABLES");
+    	ArrayList <Object> tables= new ArrayList<>();
+    	String[] tabellen = {"HERKUNFTSLAND_ENTRY","MOBIL_TEL_HERSTELLER_ENTRY", "MODELL_ENTRY"};
+    	List<Object> expected= Arrays.asList(tabellen);
+
+    	
+        while(s1.next()){
+        	tables.add(s1.getString(1));
+        }
+        
+        if(tables.size()<1) {
+        	tables.add("TEST");
+        	tables.add("TEST");
+        }
+        if(tables.size()<2) {
+        	tables.add("TEST");
+        }
+       
+        if(expected.get(0).equals(tables.get(0))&& expected.get(1).equals(tables.get(1))&&expected.get(2).equals(tables.get(2))) {
+        	assertTrue(expected.get(0).equals(tables.get(0)));
+        	
+        } else {
+        	fail();
+        }
+      
+
+    }
+    
+    @Test
+    public final void testGruendungsjahrUSA() throws SQLException{
+    	ResultSet rs= getResult("SELECT * FROM HERKUNFTSLAND_ENTRY");
+        while(rs.next()){
+            if(rs.getString(2).contentEquals("USA")){
+            	assertTrue(rs.getInt(4)==1776);
+            }
+        }
+       
+    }
+    
+    @Test
+    public final void testGruendungsjahrChina() throws SQLException{
+    	ResultSet rs= getResult("SELECT * FROM HERKUNFTSLAND_ENTRY");
+        while(rs.next()){
+            if(rs.getString(2).contentEquals("Volksrepublik China")){
+            	assertTrue(rs.getInt(4)==1949);
+            }
+        }
+        
+    }
+    
+    @Test
+    public final void testGruendungsjahrChinaNegativ() throws SQLException{
+    	ResultSet rs= getResult("SELECT * FROM HERKUNFTSLAND_ENTRY");
+        while(rs.next()){
+            if(rs.getString(2).contentEquals("Volksrepublik China")){
+            	assertFalse(rs.getInt(4)==1800);
+            } 
+        }
+        
+    }
+    
+    
+    @Test
+    public final void testSamsungMitarbeiter() throws SQLException{
+    	ResultSet rs= getResult("SELECT * FROM MOBIL_TEL_HERSTELLER_ENTRY");
+        while(rs.next()){
+            if(rs.getString(3).contentEquals("Samsung")){
+            	assertTrue(rs.getInt(5)==309630);
+            } 
+        }
+
+    }
+    
+    @Test
+    public final void testUmsatzHuawei() throws SQLException{
+    	ResultSet rs= getResult("SELECT * FROM  MOBIL_TEL_HERSTELLER_ENTRY");
+        while(rs.next()){
+            if(rs.getString(3).contentEquals("Huawei")){
+                System.out.println(rs.getInt(6));
+            	assertEquals(122000000, rs.getInt(6));
+            } 
+
+        }
+       
+    }
+    
+    @Test
+    public final void testUmsatzHuaweiNegativ() throws SQLException{
+    	ResultSet rs= getResult("SELECT * FROM  MOBIL_TEL_HERSTELLER_ENTRY");
+        while(rs.next()){
+            if(rs.getString(3).contentEquals("Huawei")){
+                System.out.println(rs.getInt(6));
+            	assertFalse(rs.getInt(6)==1);
+            } 
+
+        }
+        
+    }
+    @AfterAll
+    public void closeConnection() throws SQLException {
+    	conn.close();
+    }
+      
 }
