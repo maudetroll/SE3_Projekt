@@ -22,11 +22,11 @@ public class ModellEntry implements Serializable {
 	public void setModellName(String modellName) {
 		this.modellName = modellName;
 	}
-	public double getDisplayGroeﬂe() {
-		return displayGroeﬂe;
+	public double getDisplayGroe√üe() {
+		return displayGroe√üe;
 	}
-	public void setDisplayGroeﬂe(double displayGroeﬂe) {
-		this.displayGroeﬂe = displayGroeﬂe;
+	public void setDisplayGroe√üe(double displayGroe√üe) {
+		this.displayGroe√üe = displayGroe√üe;
 	}
 	public String getProzessorName() {
 		return prozessorName;
@@ -51,22 +51,22 @@ public class ModellEntry implements Serializable {
     private MobilTelHerstellerEntry mobilTelHersteller;
 	
     @Column(length = 64)
-    //@Size(min = 1, max = 64, message = "1<L‰nge>=64")
+    //@Size(min = 1, max = 64, message = "1<LÔøΩnge>=64")
     @NotNull(message = "Muss ungleich null sein")
 	private String modellName;
     
     @Column(length = 64)
-    //@Size(min = 1, max = 64, message = "1<L‰nge>=64")
+    //@Size(min = 1, max = 64, message = "1<LÔøΩnge>=64")
     @NotNull(message = "Muss ungleich null sein")
-	private double displayGroeﬂe;
+	private double displayGroe√üe;
     
     @Column(length = 64)
-    //@Size(min = 1, max = 64, message = "1<L‰nge>=64")
+    //@Size(min = 1, max = 64, message = "1<LÔøΩnge>=64")
     @NotNull(message = "Muss ungleich null sein")
 	private String prozessorName;
     
     @Column(length = 64)
-    //@Size(min = 1, max = 64, message = "1<L‰nge>=64")
+    //@Size(min = 1, max = 64, message = "1<LÔøΩnge>=64")
     @NotNull(message = "Muss ungleich null sein")
 	private double preis;
     

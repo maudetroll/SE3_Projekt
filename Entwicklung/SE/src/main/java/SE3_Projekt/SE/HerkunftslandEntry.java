@@ -28,13 +28,13 @@ public class HerkunftslandEntry implements Serializable {
     private long id;
     
     @Column(length = 64)
-    @Size(min = 1, max = 64, message = "1<Länge>=64")
+    @Size(min = 1, max = 64, message = "1<Lï¿½nge>=64")
     @NotNull(message = "Muss ungleich null sein")
     private String name = "";
     
     
     @Column(length = 64)
-    //@Size(min = 1, max = 64, message = "1<Länge>=64")
+    //@Size(min = 1, max = 64, message = "1<Lï¿½nge>=64")
     @NotNull(message = "Muss ungleich null sein")
 	private long einwohnerzahl;
     
@@ -68,19 +68,19 @@ public class HerkunftslandEntry implements Serializable {
 	}
 
 
-	public int getGründungsjahr() {
+	public int getGrÃ¼ndungsjahr() {
 		return gruendungsjahr;
 	}
 
 
-	public void setGründungsjahr(int gründungsjahr) {
-		this.gruendungsjahr = gründungsjahr;
+	public void setGrÃ¼ndungsjahr(int grÃ¼ndungsjahr) {
+		this.gruendungsjahr = grÃ¼ndungsjahr;
 	}
     @OneToMany(mappedBy="herkunftsland")
     private List<MobilTelHerstellerEntry> hersteller = new ArrayList<>();
 
 	@Column(length = 64)
-    //@Size(min = 1, max = 64, message = "1<Länge>=64")
+    //@Size(min = 1, max = 64, message = "1<Lï¿½nge>=64")
     @NotNull(message = "Muss ungleich null sein")
 	private int gruendungsjahr;
 	
