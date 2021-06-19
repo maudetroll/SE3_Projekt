@@ -48,37 +48,9 @@ public class MobilTelHerstellerEntry implements Serializable {
     @OneToMany(mappedBy="mobilTelHersteller")
     private List<ModellEntry> modelle = new ArrayList<>();
 	
-	
-	public String getName() {
-		return name;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public int getGruendungsjahr() {
-		return gruendungsjahr;
-	}
-	
-	public void setGruendungsjahr(int gruendungsjahr) {
-		this.gruendungsjahr = gruendungsjahr;
-	}
-	
-	public int getMitarbeiteranzahl() {
-		return mitarbeiteranzahl;
-	}
-	
-	public void setMitarbeiteranzahl(int mitarbeiteranzahl) {
-		this.mitarbeiteranzahl = mitarbeiteranzahl;
-	}
-	
-	public int getUmsatz() {
-		return umsatz;
-	}
-	
-	public void setUmsatz(int umsatz) {
-		this.umsatz = umsatz;
+    
+	public MobilTelHerstellerEntry() {
+		
 	}
 
 }

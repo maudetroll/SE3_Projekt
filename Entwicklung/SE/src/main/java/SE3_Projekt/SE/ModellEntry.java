@@ -44,36 +44,8 @@ public class ModellEntry implements Serializable {
     @NotNull(message = "Muss ungleich null sein")
 	private double preis;
     
-	public String getModellName() {
-		return modellName;
-	}
-	
-	public void setModellName(String modellName) {
-		this.modellName = modellName;
-	}
-	
-	public double getDisplayGroesse() {
-		return displayGroesse;
-	}
-	
-	public void setDisplayGroesse(double displayGroesse) {
-		this.displayGroesse = displayGroesse;
-	}
-	
-	public String getProzessorName() {
-		return prozessorName;
-	}
-	
-	public void setProzessorName(String prozessorName) {
-		this.prozessorName = prozessorName;
-	}
-	
-
-	public double getPreis() {
-		return preis;
-	}
-	
-	public void setPreis(double preis) {
-		this.preis = preis;
+    
+	public ModellEntry() {
+		
 	}
 }

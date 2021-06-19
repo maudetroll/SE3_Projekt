@@ -45,46 +45,6 @@ public class HerkunftslandEntry implements Serializable {
 	private int gruendungsjahr;
 	
 	
-    
-    public long getId() {
-		return id;
-	}
-
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-
-	public String getName() {
-		return name;
-	}
-
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
-	public long getEinwohnerzahl() {
-		return einwohnerzahl;
-	}
-
-
-	public void setEinwohnerzahl(long einwohnerzahl) {
-		this.einwohnerzahl = einwohnerzahl;
-	}
-
-
-	public int getGruendungsjahr() {
-		return gruendungsjahr;
-	}
-
-
-	public void setGruendungsjahr(int gruendungsjahr) {
-		this.gruendungsjahr = gruendungsjahr;
-	}
-    
 	public HerkunftslandEntry() {
 		
 	}
