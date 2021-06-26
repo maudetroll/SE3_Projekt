@@ -6,7 +6,7 @@ function basisBereitsstellen(name){
 
 async function zeigeLandEintrage(){
 
-	let response= await fetch("http://localhost:9000/api/Herkunftslaender");
+	let response= await fetch("http://localhost:8080/Herkunftslaender");
 	let entries= await response.json();
 	console.log (entries);
 
@@ -27,7 +27,7 @@ function zeigeLandAn(eintraege){
 
 async function zeigeHerstellerEintrage(HerstellerVonLand){
 
-	let response= await fetch("http://localhost:9000/api/MobiltelefonHersteller");
+	let response= await fetch("http://localhost:8080/MobiltelefonHersteller");
 	let entries= await response.json();
 	
 	if(HerstellerVonLand !=null){
@@ -52,7 +52,7 @@ function zeigeHerstellerAn(eintraege){
 
 async function zeigeModellEintraege(ModellvonLand){
 
-	let response= await fetch("http://localhost:9000/api/Modelle");
+	let response= await fetch("http://localhost:8080/Modelle");
 	let entries= await response.json();
 
 	console.log(ModellvonLand)
