@@ -67,6 +67,20 @@ public class ModellEntry implements Serializable {
 	@Column(length = 64)
     @NotNull(message = "Muss ungleich null sein")
 	private double preis;
+	
+	@Column(length = 200)
+    	@Size(min = 1, max = 200, message = "1<Lï¿½nge>=200")
+       @NotNull(message = "Muss ungleich null sein")
+	private String urlBild;
+	
+	public String getUrlBild() {
+		return urlBild;
+	}
+
+
+	public void setUrlBild(String urlBild) {
+		this.urlBild = urlBild;
+	}
     
     
     
