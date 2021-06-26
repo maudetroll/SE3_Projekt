@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "ed29ce7b-8d41-4576-b38b-b094786f004a",
+		"name": "se3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "land",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test auf HTTP-Code 200",
+							"pm.test(\"Status test\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Test auf JSON-Response",
+							"pm.test(\"Content test - type of response is JSON\", () => {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.eql(\"application/json\");",
+							"});",
+							"",
+							"// Test auf richtigen Typ eines Attrubutes",
+							"pm.test(\"Content test - type test name attribute\", () => {",
+							"    pm.expect(pm.response.json()._embedded.Herkunftslaender[0].name).to.be.a('string');",
+							"});",
+							"",
+							"// Test auf Wert eines Attributes",
+							"pm.test(\"Content test - length test name attribute\", () => {",
+							"    pm.expect(pm.response.json()._embedded.Herkunftslaender[0].name).to.have.lengthOf(19);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/Herkunftslaender",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Herkunftslaender"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modell",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test auf HTTP-Code 200",
+							"pm.test(\"Status test\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Test auf JSON-Response",
+							"pm.test(\"Content test - type of response is JSON\", () => {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.eql(\"application/json\");",
+							"});",
+							"",
+							"// Test auf richtigen Typ eines Attrubutes",
+							"pm.test(\"Content test - type test name attribute\", () => {",
+							"    pm.expect(pm.response.json()._embedded.Modelle[0].modellName).to.be.a('string');",
+							"});",
+							"",
+							"// Test auf Wert eines Attributes",
+							"pm.test(\"Content test - length test name attribute\", () => {",
+							"    pm.expect(pm.response.json()._embedded.Modelle[0].modellName).to.have.lengthOf(3);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/Modelle",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Modelle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hersteller",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test auf HTTP-Code 200",
+							"pm.test(\"Status test\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Test auf JSON-Response",
+							"pm.test(\"Content test - type of response is JSON\", () => {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.eql(\"application/json\");",
+							"});",
+							"",
+							"// Test auf richtigen Typ eines Attrubutes",
+							"pm.test(\"Content test - type test name attribute\", () => {",
+							"    pm.expect(pm.response.json()._embedded.MobiltelefonHersteller[0].name).to.be.a('string');",
+							"});",
+							"",
+							"// Test auf Wert eines Attributes",
+							"pm.test(\"Content test - length test name attribute\", () => {",
+							"    pm.expect(pm.response.json()._embedded.MobiltelefonHersteller[0].name).to.have.lengthOf(7);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/MobiltelefonHersteller",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"MobiltelefonHersteller"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
