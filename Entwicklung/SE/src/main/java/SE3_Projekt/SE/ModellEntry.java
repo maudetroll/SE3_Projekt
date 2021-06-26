@@ -40,11 +40,84 @@ public class ModellEntry implements Serializable {
     @NotNull(message = "Muss ungleich null sein")
 	private String prozessorName;
     
-    @Column(length = 64)
+    public long getId() {
+		return id;
+	}
+
+
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+
+
+	public double getDisplayGroesse() {
+		return displayGroesse;
+	}
+
+
+
+	public void setDisplayGroesse(double displayGroesse) {
+		this.displayGroesse = displayGroesse;
+	}
+
+
+
+	@Column(length = 64)
     @NotNull(message = "Muss ungleich null sein")
 	private double preis;
     
     
+    
+	public MobilTelHerstellerEntry getMobilTelHersteller() {
+		return mobilTelHersteller;
+	}
+
+
+
+	public void setMobilTelHersteller(MobilTelHerstellerEntry mobilTelHersteller) {
+		this.mobilTelHersteller = mobilTelHersteller;
+	}
+
+
+
+	public String getModellName() {
+		return modellName;
+	}
+
+
+
+	public void setModellName(String modellName) {
+		this.modellName = modellName;
+	}
+
+
+
+	public String getProzessorName() {
+		return prozessorName;
+	}
+
+
+
+	public void setProzessorName(String prozessorName) {
+		this.prozessorName = prozessorName;
+	}
+
+
+
+	public double getPreis() {
+		return preis;
+	}
+
+
+
+	public void setPreis(double preis) {
+		this.preis = preis;
+	}
+
+
+
 	public ModellEntry() {
 		
 	}

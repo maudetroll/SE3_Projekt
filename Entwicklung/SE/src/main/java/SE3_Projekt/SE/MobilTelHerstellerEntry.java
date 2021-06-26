@@ -49,8 +49,79 @@ public class MobilTelHerstellerEntry implements Serializable {
     private List<ModellEntry> modelle = new ArrayList<>();
 	
     
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public int getMitarbeiteranzahl() {
+		return mitarbeiteranzahl;
+	}
+
+
+	public void setMitarbeiteranzahl(int mitarbeiteranzahl) {
+		this.mitarbeiteranzahl = mitarbeiteranzahl;
+	}
+
+
+	public int getUmsatz() {
+		return umsatz;
+	}
+
+
+	public void setUmsatz(int umsatz) {
+		this.umsatz = umsatz;
+	}
+
+
+	public long getId() {
+		return id;
+	}
+
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+
+	public HerkunftslandEntry getHerkunftsland() {
+		return herkunftsland;
+	}
+
+
+	public void setHerkunftsland(HerkunftslandEntry herkunftsland) {
+		this.herkunftsland = herkunftsland;
+	}
+
+
+	public int getGruendungsjahr() {
+		return gruendungsjahr;
+	}
+
+
+	public void setGruendungsjahr(int gruendungsjahr) {
+		this.gruendungsjahr = gruendungsjahr;
+	}
+
+
+	public List<ModellEntry> getModelle() {
+		return modelle;
+	}
+
+
+	public void setModelle(List<ModellEntry> modelle) {
+		this.modelle = modelle;
+	}
+
+
 	public MobilTelHerstellerEntry() {
 		
 	}
+	
 
 }

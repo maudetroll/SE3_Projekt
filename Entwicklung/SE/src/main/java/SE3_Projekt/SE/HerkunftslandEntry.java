@@ -16,10 +16,80 @@ import javax.validation.constraints.Size;
 
 import lombok.Data;
 
-@Data
+/**
+ * @author johannes
+ *
+ */
 @Entity
+@Data
 public class HerkunftslandEntry implements Serializable {
 	
+	public String getName() {
+		return name;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+	public long getId() {
+		return id;
+	}
+
+
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
+
+	public long getEinwohnerzahl() {
+		return einwohnerzahl;
+	}
+
+
+
+	public void setEinwohnerzahl(long einwohnerzahl) {
+		this.einwohnerzahl = einwohnerzahl;
+	}
+
+
+
+	public List<MobilTelHerstellerEntry> getHersteller() {
+		return hersteller;
+	}
+
+
+
+	public void setHersteller(List<MobilTelHerstellerEntry> hersteller) {
+		this.hersteller = hersteller;
+	}
+
+
+
+	public int getGruendungsjahr() {
+		return gruendungsjahr;
+	}
+
+
+
+	public void setGruendungsjahr(int gruendungsjahr) {
+		this.gruendungsjahr = gruendungsjahr;
+	}
+
+
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -43,6 +113,7 @@ public class HerkunftslandEntry implements Serializable {
 	@Column(length = 64)
     @NotNull(message = "Muss ungleich null sein")
 	private int gruendungsjahr;
+	
 	
 	
 	public HerkunftslandEntry() {
