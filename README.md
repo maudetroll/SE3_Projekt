@@ -27,7 +27,7 @@ Dev: Maurice
 Tester: Johannes
 
 
-### Sprint 2 (19.06.2021)
+### Sprint 3 (19.06.2021)
 
 PO: Xenia
 SM: Lukas 
@@ -35,7 +35,7 @@ Dev: Johannes
 Tester: Maurice
 
 
-### Sprint 2 (26.06.2021)
+### Sprint 4 (26.06.2021)
 
 PO: Johannes
 SM: Maurice
