@@ -1,9 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-	<title>Startseite</title>
-</head>
-<body>
-	<h1>Testseite</h1>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title>Smartphone Service</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="script.js"></script>
+
+        <script>
+            const API_URL = "http://localhost:9090/api";
+
+            window.addEventListener("load", async () => {
+                let body = document.querySelector("body");
+            });
+        </script>
+    </head>
+    <body>
+		<button id=showCountry onclick="zeigeLandEintrage()"> Zeige Land </button>
+		<button id=showManufactor onclick="zeigeHerstellerEintrage()"> Zeige Hersteller </button>
+		<button id=showModell onclick="zeigeModellEintraege()"> Zeige Modell </button>
+		<button id=reset onclick="reset()"> Reset</button>
+		<h1> Smartphone Service </h1>
+        <ul id="entries"></ul>
+		<ul id="entriesHersteller"></ul>
+		<ul id="entriesModelle"></ul>
+    </body>
 </html>
