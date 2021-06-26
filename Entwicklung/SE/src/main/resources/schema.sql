@@ -23,5 +23,6 @@ CREATE TABLE MODELL_ENTRY
    modell_name VARCHAR (255),
    display_groesse int,
    prozessor_name VARCHAR (255),
+   url_bild VARCHAR (255),
    preis decimal (10)
 );
