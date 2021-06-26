@@ -74,6 +74,22 @@ function zeigeModelleAn(eintraege){
 	});
 	aufbau[1].innerHTML += `<li> Modellname: <b>${eintraege.modellName}:</b> CPU: ${eintraege.prozessorName}</li>`;
 	aufbau[0].appendChild(aufbau[1]);
+	console.log(eintraege)
+	console.log(eintraege.urlBild);
+	
+		fig = document.createElement("figure");
+		img = document.createElement("img");
+		img.src = eintraege.urlBild;
+		img.alt = "Bild Smartphone";
+		img.id = "picture";
+		fig.append(img);
+		
+		cap = document.createElement("figcaption");
+		cap.innerHTML = eintraege.modellName;
+		
+		fig.append(cap);
+		document.getElementById("pictures").append(fig);
+	
 
 }
 
